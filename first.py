@@ -47,9 +47,17 @@
 # print(type(x))
 
 
-message1 = "hi every body. here is python class.\nwe are going to learn every thing about python.\npython is very poweful language"
-print(message1)
-message2 = '''hi every body. here is python class. 
-we are going to learn every thing about python. 
-python is very poweful language'''
-print(message2)
+# message1 = "hi every body. here is python class.\nwe are going to learn every thing about python.\npython is very poweful language"
+# print(message1)
+# message2 = '''hi every body. here is python class.
+# we are going to learn every thing about python.
+# python is very poweful language'''
+# print(message2)
+# message2 = """hi every body. here is python class.
+# we are going to learn every thing about python.
+# python is very poweful language"""
+# print(message2)
+
+
+message = 'He said, "Aren\'t can\'t shouldn\'t wouldn\'t."'
+print(message)
