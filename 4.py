@@ -58,14 +58,14 @@
 # print(shopping_list)
 
 
-numbers = [1, 2, 3, 4, 5, 6]
+# numbers = [1, 2, 3, 4, 5, 6]
 
 # del numbers[2]
 # numbers.remove(4)
 # print(numbers)
 
 
-names = ["nikan", "vihan", "rozhman", "pezhman", "tina", "sima", "dorna"]
+# names = ["nikan", "vihan", "rozhman", "pezhman", "tina", "sima", "dorna"]
 
 # names.remove("rozhman")
 # names.remove("sima")
@@ -83,18 +83,18 @@ names = ["nikan", "vihan", "rozhman", "pezhman", "tina", "sima", "dorna"]
 
 
 # tuple data type
-numbers1 = [1, 2, 3, 4, 5, 6, 7]  # mutable قابل تغییر
-print(type(numbers))
-numbers1[0] = 100
-numbers1.append(234)
-numbers1.remove(4)
+# numbers1 = [1, 2, 3, 4, 5, 6, 7]  # mutable قابل تغییر
+# print(type(numbers))
+# numbers1[0] = 100
+# numbers1.append(234)
+# numbers1.remove(4)
 
 
-numbers2 = (1, 2, 3, 4, 5, 6, 7)  # immutable غیر قابل تغییر
-print(type(numbers2))
+# numbers2 = (1, 2, 3, 4, 5, 6, 7)  # immutable غیر قابل تغییر
+# print(type(numbers2))
 # numbers2[0] = 200  # error  تاپل غیر قابل تغییر است
 # numbers2.append(234) # error
 # numbers2.remove(6)
 
-print(numbers2[4])
-print(numbers2[1:4])
+# print(numbers2[4])
+# print(numbers2[1:4])
