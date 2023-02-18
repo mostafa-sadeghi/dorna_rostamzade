@@ -18,23 +18,23 @@
 # for s in string:
 #     print(s, end=' ')
 # exercise : write a program that gets a name from input and prints each char's of the name with - separator
-name = input('enter a name: ')
-for n in name:
-    print(n)
-for n in name:
-    print(n, end=" ")
-for n in name:
-    print(n, end="-")
+# name = input('enter a name: ')
+# for n in name:
+#     print(n)
+# for n in name:
+#     print(n, end=" ")
+# for n in name:
+#     print(n, end="-")
 ######################################
-print(len(name))
+# print(len(name))
 
-for i in range(len(name)):
-    print(name[i], end="-")
+# for i in range(len(name)):
+#     print(name[i], end="-")
 
 
 #######################################
-for i in range(len(name)):
-    if i == len(name) - 1:
-        print(name[i])
-    else:
-        print(name[i], end="-")
+# for i in range(len(name)):
+#     if i == len(name) - 1:
+#         print(name[i])
+#     else:
+#         print(name[i], end="-")
