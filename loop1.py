@@ -26,16 +26,16 @@
 # slice 3 first number from the list
 
 numbers = []
-for i in range(3):
-    n = float(input('enter a number: '))
-    numbers.append(n)
+# for i in range(3):
+#     n = float(input('enter a number: '))
+#     numbers.append(n)
 
-print("numbers :", numbers)
-print()
-print("sum is:", sum(numbers))
-total = 0
-print()
-for i in range(3):
-    total += numbers[i]
-print("sum is:", total)
-print("sum - 10 is:", total - 10)
+# print("numbers :", numbers)
+# print()
+# print("sum is:", sum(numbers))
+# total = 0
+# print()
+# for i in range(3):
+#     total += numbers[i]
+# print("sum is:", total)
+# print("sum - 10 is:", total - 10)

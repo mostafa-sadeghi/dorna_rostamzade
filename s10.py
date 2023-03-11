@@ -183,12 +183,12 @@ b = 5
 # b. if a < b & c:
 # c. if a < b and a < c:
 # d. if a < b and c:
-a = 1
-b = 2
-c = 3
-if a < b & c:
-    print('ok')
-if a < b and a < c:
-    print('ok')
-if a < b and c:
-    print('ok')
+# a = 1
+# b = 2
+# c = 3
+# if a < b & c:
+#     print('ok')
+# if a < b and a < c:
+#     print('ok')
+# if a < b and c:
+#     print('ok')
