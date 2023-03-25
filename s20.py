@@ -48,3 +48,24 @@ while True:
         student['age'] = studen_age
         student['grade'] = studen_grade
         all_students.append(student)
+    elif user_input == '3':
+        name_to_delete = input('enter a name to delele from our list:> ')
+        for i in range(len(all_students)):
+
+            if all_students[i]['name'] == name_to_delete:
+                del all_students[i]
+                break
+    elif user_input == '4':
+        name_to_edit = input('enter a name to edit from our list:> ')
+        for i in range(len(all_students)):
+            if all_students[i]['name'] == name_to_edit:
+                print(
+                    "which one to edit?\nEnter 'n' for change the name | 'a' for age | 'g' for grade: ")
+                edit_entry = input('> ')
+                if edit_entry == 'n':
+                    all_students[i]['name'] = input('enter new name> ')
+                elif edit_entry == 'a':
+                    all_students[i]['age'] = input('enter new age:> ')
+                elif edit_entry == 'g':
+                    all_students[i]['grade'] = input('enter new grade:> ')
+            break
