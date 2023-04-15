@@ -61,19 +61,19 @@
 #             print("no")
 
 
-total = 0
+# total = 0
 
-for i in range(5):
-    new_number = int(input('enter a number:'))
-    total += new_number
+# for i in range(5):
+#     new_number = int(input('enter a number:'))
+#     total += new_number
 
-print("the total is :", total)
+# print("the total is :", total)
 
 
-number_of_zeros = 0
-for i in range(5):
-    number = int(input('enter a number: '))
-    if number == 0:
-        number_of_zeros += 1
+# number_of_zeros = 0
+# for i in range(5):
+#     number = int(input('enter a number: '))
+#     if number == 0:
+#         number_of_zeros += 1
 
-print("number of zero is:", number_of_zeros)
+# print("number of zero is:", number_of_zeros)
