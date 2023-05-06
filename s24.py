@@ -19,13 +19,17 @@ while done:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 done = False
+            elif event.key == pygame.K_RIGHT:
+                xpos += 1
+            elif event.key == pygame.K_DOWN:
+                ypos += 1
 
         elif event.type == pygame.QUIT:
             done = False
     screen.fill(BLACK)
     pygame.draw.rect(screen, WHITE, [xpos, ypos, 10, 10])
-    xpos += change_x_val
-    ypos += change_y_val
+    # xpos += change_x_val
+    # ypos += change_y_val
 
     if ypos > 490 or ypos < 0:
         change_y_val = -1 * change_y_val
