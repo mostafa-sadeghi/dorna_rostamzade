@@ -1,4 +1,4 @@
-number = input('enter a number: ')
+# number = input('enter a number: ')
 # print(number[0])
 # print(number[1])
 # print(number[2])
@@ -13,3 +13,10 @@ number = input('enter a number: ')
 
 
 # با روش ریاضی هم انجام
+
+number = int(input('enter a number: '))
+i = 1
+while number != 0:
+    print(i, number % 10)
+    number = number // 10
+    i = i + 1
