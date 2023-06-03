@@ -17,6 +17,18 @@ pygame.display.set_caption("Our First Game")
 GREEN = (0,255,0)# RGB
 DARKGREEN = (10,50,10)# RGB
 BLACK = (0,0,0)# RGB
+WHITE = (255,255,255)# RGB
+
+sound_1 = pygame.mixer.Sound('sound_1.wav')
+sound_1.play()
+pygame.time.delay(500)
+sound_2 = pygame.mixer.Sound('sound_2.wav')
+sound_2.play()
+pygame.time.delay(500)
+
+sound_2.set_volume(0.1)
+sound_2.play()
+
 
 fonts = pygame.font.get_fonts()
 # for font in fonts:
@@ -46,7 +58,7 @@ dragon_right_image = pygame.image.load("dragon_right.png")
 dragon_right_rect = dragon_right_image.get_rect()
 dragon_right_rect.topright = (WINDOW_WIDTH, 0)
 
-
+pygame.draw.line(display_surface, WHITE, (0,75), (WINDOW_WIDTH, 75), 4)
 running = True
 while running:
     for event in pygame.event.get():
@@ -55,7 +67,7 @@ while running:
 
     display_surface.blit(dragon_left_image, dragon_left_rect)
     display_surface.blit(dragon_right_image, dragon_right_rect)
-    display_surface.blit(system_text,system_text_rect)
+    # display_surface.blit(system_text,system_text_rect)
 
     # pygame.draw.line() # exercise  کشیدن خط سفید زیر دو دراگون
 
