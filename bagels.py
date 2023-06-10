@@ -73,7 +73,12 @@ def check_user_guess(user_guess, secret_number):
 
 secret_number = generate_secrent_number()
 
-user_guess = input('Enter your guess: ')
-print(secret_number)
-result = check_user_guess(user_guess, secret_number)
-print(result)
+for i in range(10):
+    user_guess = input('Enter your guess: ')
+    print(secret_number)
+    result = check_user_guess(user_guess, secret_number)
+    if user_guess == secret_number:
+        print(result)
+        break
+    else:
+        print(result)

@@ -82,6 +82,11 @@ while running:
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 dragon_rect.x -= VELOCITY
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.button == 1:
+                dragon_rect.center = event.pos
+        if event.type == pygame.MOUSEMOTION:
+            dragon_rect.center = event.pos
 
     display_surface.fill(BLACK)
     display_surface.blit(dragon_left_image, dragon_left_rect)
@@ -89,7 +94,6 @@ while running:
     pygame.draw.line(display_surface, WHITE, (0,75), (WINDOW_WIDTH, 75), 4)
     # display_surface.blit(system_text,system_text_rect)
     display_surface.blit(dragon_image,dragon_rect)
-    # pygame.draw.line() # exercise  کشیدن خط سفید زیر دو دراگون
 
 
     pygame.display.update()
