@@ -61,19 +61,33 @@ def change_food_position():
 
 
 def change_direction_to_up():
-    snake_head.direction = "up"
+    if snake_head.direction != "down":
+        snake_head.direction = "up"
 
 
 def change_direction_to_left():
-    snake_head.direction = "left"
+    if snake_head.direction != "right":
+        snake_head.direction = "left"
 
 
 def change_direction_to_down():
-    snake_head.direction = "down"
+    if snake_head.direction != "up":
+        snake_head.direction = "down"
 
 
 def change_direction_to_right():
-    snake_head.direction = "right"
+    if snake_head.direction != "left":
+        snake_head.direction = "right"
+
+
+def reset():
+    global score
+    score = 0
+    snake_head.goto(0, 0)
+    snake_head.direction = ""
+    for body in snake_bodies:
+        body.hideturtle()
+    snake_bodies.clear()
 
 
 snake_head = make_turtle("square", "black")
@@ -82,10 +96,9 @@ snake_head.direction = ""
 food = make_turtle("circle", "red")
 change_food_position()
 
-score_turtle = make_turtle()
-score_turtle.hideturtle()
-score_turtle.goto(0, 260)
-score_turtle.write(f"Score: {score}", align="center", font=("Arial", 28))
+score_board = make_turtle()
+score_board.hideturtle()
+score_board.goto(0, 260)
 
 
 display_surface.listen()
@@ -94,14 +107,39 @@ display_surface.onkeypress(change_direction_to_down, "Down")
 display_surface.onkeypress(change_direction_to_left, "Left")
 display_surface.onkeypress(change_direction_to_right, "Right")
 
-
+snake_bodies = []
 running = True
 while running:
+    score_board.clear()
+    score_board.write(f"Score: {score}", align="center", font=("Terminal", 22))
+
     display_surface.update()
 
     if snake_head.distance(food) < 20:
         change_food_position()
         score += 1
+        new_tail = make_turtle("square", "grey")
+        snake_bodies.append(new_tail)
+
+    for i in range(len(snake_bodies) - 1, 0, -1):
+        prev_x = snake_bodies[i-1].xcor()
+        prev_y = snake_bodies[i-1].ycor()
+        snake_bodies[i].goto(prev_x, prev_y)
+
+    if len(snake_bodies) > 0:
+        head_x_position = snake_head.xcor()
+        head_y_position = snake_head.ycor()
+        snake_bodies[0].goto(head_x_position, head_y_position)
+
+    if snake_head.xcor() > 290 or \
+            snake_head.xcor() < -290 or\
+            snake_head.ycor() > 290 or\
+            snake_head.ycor() < -290:
+        reset()
 
     move_snake()
+    for body in snake_bodies:
+        if body.distance(snake_head) < 20:
+            reset()
+
     sleep(0.2)
