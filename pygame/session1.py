@@ -29,7 +29,7 @@ WHITE = (255,255,255)# RGB
 # sound_2.set_volume(0.1)
 # sound_2.play()
 
-pygame.mixer.music.load('music.wav')
+pygame.mixer.music.load('dragon_game/music.wav')
 
 pygame.mixer.music.play(-1,0.0)
 # pygame.time.delay(3000)
@@ -39,7 +39,7 @@ fonts = pygame.font.get_fonts()
 # for font in fonts:
 #     print(font)
 system_font = pygame.font.SysFont('sahelblack',64)
-custom_font = pygame.font.Font('AttackGraffiti.ttf', 32)
+custom_font = pygame.font.Font('dragon_game/AttackGraffiti.ttf', 32)
 
 text_to_be_reshaped = 'بازی دراگون'
 reshaped_text = arabic_reshaper.reshape(text_to_be_reshaped)
@@ -54,18 +54,18 @@ system_text_rect.center = (WINDOW_WIDTH//2, WINDOW_HEIGHT//2)
 
 
 
-dragon_left_image = pygame.image.load("dragon_left.png")
+dragon_left_image = pygame.image.load("dragon_game/dragon_left.png")
 dragon_left_rect = dragon_left_image.get_rect()
 dragon_left_rect.topleft = (0, 0)
 
 
-dragon_right_image = pygame.image.load("dragon_right.png")
+dragon_right_image = pygame.image.load("dragon_game/dragon_right.png")
 dragon_right_rect = dragon_right_image.get_rect()
 dragon_right_rect.topright = (WINDOW_WIDTH, 0)
 
 
 
-dragon_image = pygame.image.load('dragon_right.png')
+dragon_image = pygame.image.load('dragon_game/dragon_right.png')
 dragon_rect = dragon_image.get_rect()
 dragon_rect.centerx = WINDOW_WIDTH//2
 dragon_rect.bottom = WINDOW_HEIGHT

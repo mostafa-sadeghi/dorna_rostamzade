@@ -1,1 +1,7 @@
-.vscode/
+.vscode
+.idea
+*.exe
+*.spec
+dist
+build
+*.mp3
