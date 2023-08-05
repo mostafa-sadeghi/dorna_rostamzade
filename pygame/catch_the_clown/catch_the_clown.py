@@ -18,6 +18,11 @@ bg_pic = pygame.image.load("background.png")
 bg_rect = bg_pic.get_rect()
 bg_rect.topleft = (0, 0)
 
+
+clown_image = pygame.image.load("clown.png")
+clown_rect = clown_image.get_rect()
+clown_rect.center = (WINDOW_WIDTH/2, WINDOW_HEIGHT/2)
+
 score = 0
 player_lives = 5
 BLUE = (1, 175, 209)
@@ -42,8 +47,9 @@ pygame.mixer.music.load("ctc_background_music.wav")
 click_sound = pygame.mixer.Sound("click_sound.wav")
 miss_sound = pygame.mixer.Sound("miss_sound.wav")
 
-
-
+clown_dx = random.choice((-1,1))
+clown_dy = random.choice((-1,1))
+clown_velocity = 5
 pygame.mixer.music.play(-1)
 running = True
 while running:
@@ -52,10 +58,34 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+        if event.type == pygame.MOUSEBUTTONDOWN:
+          
+            if clown_rect.collidepoint(event.pos):
+                click_sound.play()
+                score += 1
+                clown_velocity += 1
+
+            else:
+                miss_sound.play()
+                player_lives -= 1
+
+
+    clown_rect.x += clown_dx * clown_velocity
+    clown_rect.y += clown_dy * clown_velocity
+
+    if clown_rect.bottom > WINDOW_HEIGHT or clown_rect.top < 0:
+        clown_dy = -1 * clown_dy
+    if clown_rect.right > WINDOW_WIDTH or clown_rect.left < 0:
+        clown_dx *= -1
+
+    score_text = font.render(f"Score: {score}", True, YELLOW)
+    lives_text = font.render(f"Lives: {player_lives}", True, YELLOW)
+
     display_surface.blit(bg_pic, bg_rect)
     display_surface.blit(title_text, title_rect)
     display_surface.blit(score_text, score_rect)
     display_surface.blit(lives_text, lives_rect)
+    display_surface.blit(clown_image, clown_rect)
     pygame.display.update()
     clock.tick(FPS)
 
